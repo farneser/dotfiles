@@ -1,7 +1,7 @@
 -- Basic config
 
-require("config.mappings")
 require("plugins")
+require("config.mappings")
 require("config.colors")
 require("config.configs")
 
