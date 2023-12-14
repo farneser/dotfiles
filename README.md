@@ -8,4 +8,6 @@ use lazy loader
 
 * `SPC + e` - Open neotree
 
+## Languages spell checking 
 
+todo: complete list
