@@ -9,21 +9,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Themes
     { 'joshdick/onedark.vim' },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'rebelot/kanagawa.nvim' },
+    
+    -- Plugins
     { 'nvim-treesitter/nvim-treesitter' }, 
     {
 	    'glepnir/dashboard-nvim',
 	    event = 'VimEnter',
 	    dependencies = {{'nvim-tree/nvim-web-devicons'}}
     },
-    { 'windwp/nvim-ts-autotag' }, 
     {
         "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
+        branch = "v3.x",
         dependencies = {
-            "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim", "s1n7ax/nvim-window-picker"
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            "s1n7ax/nvim-window-picker",
         }
     },
-    {'rebelot/kanagawa.nvim'},
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    { 'nvim-lualine/lualine.nvim' },
 })

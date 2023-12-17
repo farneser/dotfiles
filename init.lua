@@ -10,4 +10,5 @@ require("config.configs")
 require("plugins.treesitter")
 require("plugins.dashboard")
 require("plugins.neotree")
-
+require("plugins.telescope")
+require("plugins.lualine")
