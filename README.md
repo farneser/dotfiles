@@ -34,6 +34,7 @@ Leader is a `SPACE`
 | `<leader>E`  | Toggle NeoTree       |
 | `<leader>fg` | Find by file content |
 | `<C-p>`      | Find file            |
+| `<leader>fb` | Open buffers         |
 
 
 ## Languages spell checking 
