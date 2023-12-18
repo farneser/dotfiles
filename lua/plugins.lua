@@ -37,4 +37,8 @@ require("lazy").setup({
     },
     { 'nvim-lualine/lualine.nvim' },
     { 'VonHeikemen/fine-cmdline.nvim' },
+    { 
+        'rcarriga/nvim-notify', 
+        release = "latest"
+    },
 })
