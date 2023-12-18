@@ -41,4 +41,5 @@ require("lazy").setup({
         'rcarriga/nvim-notify', 
         release = "latest"
     },
+    { "lewis6991/gitsigns.nvim" },
 })
