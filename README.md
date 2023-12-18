@@ -26,7 +26,15 @@ Config use LazyLoader for plugins
 
 ## Mappings
 
-* `SPC + e` - Open neotree
+Leader is a `SPACE`
+
+| Key          | Description          |
+|--------------|----------------------|
+| `<leader>e`  | Focus on NeoTree     |
+| `<leader>E`  | Toggle NeoTree       |
+| `<leader>fg` | Find by file content |
+| `<C-p>`      | Find file            |
+
 
 ## Languages spell checking 
 
