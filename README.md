@@ -1,8 +1,28 @@
 # NeoVim configuration
 
-requires nerd fonts
+Here is my NeoVim config 
 
-use lazy loader
+Config use LazyLoader for plugins
+
+## Installation on Linux/MacOS
+
+* Save your config
+
+    ```bash
+    mv ~/.config/nvim{,.bak}
+    ```
+
+* Clone config
+    
+    ```bash
+    git clone https://github.com/farneser/nvim-config ~/.config/nvim
+    ```
+
+* Remove `.git` folder
+
+    ```bash
+    rm -rf ~/.config/nvim/.git
+    ```
 
 ## Mappings
 
