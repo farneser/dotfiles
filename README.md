@@ -2,7 +2,7 @@
 
 Here is my NeoVim config 
 
-Config use LazyLoader for plugins
+NeoVim requires version >=0.8. Config use LazyLoader for plugins
 
 ## Installation on Linux/MacOS
 

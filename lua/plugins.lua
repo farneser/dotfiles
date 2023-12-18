@@ -36,4 +36,5 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { 'nvim-lualine/lualine.nvim' },
+    { 'VonHeikemen/fine-cmdline.nvim' },
 })
