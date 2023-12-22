@@ -29,7 +29,7 @@ return {
                         desc_hl = 'String',
                         key = 'e',
                         key_hl = 'Number',
-                        action = ':edit<CR>'
+                        action = ':edit new_file'
                     },
                     {
                         icon = '󰈞 ',

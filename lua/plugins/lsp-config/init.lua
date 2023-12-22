@@ -10,7 +10,8 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls", "pylsp",
+                    "lua_ls", "pylsp", "jdtls", "kotlin_language_server",
+                    "taplo", "lemminx", "hydra_lsp", "marksman"
                 },
             })
         end
@@ -22,6 +23,12 @@ return {
 
             lspconfig.lua_ls.setup({})
             lspconfig.pylsp.setup({})
+            lspconfig.jdtls.setup({})
+            lspconfig.kotlin_language_server.setup({})
+            lspconfig.taplo.setup({})
+            lspconfig.lemminx.setup({})
+            lspconfig.hydra_lsp.setup({})
+            lspconfig.marksman.setup({})
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
