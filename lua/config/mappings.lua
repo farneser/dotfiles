@@ -12,3 +12,4 @@ vim.keymap.set('n', '\\', ':split<CR>')
 -- Common
 vim.keymap.set('n', '<C-d>', ':t.<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+vim.keymap.set('n', '<leader>cd', ':cd %:h<CR>')

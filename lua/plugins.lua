@@ -13,9 +13,8 @@ require("lazy").setup({
     { 'joshdick/onedark.vim' },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { 'rebelot/kanagawa.nvim' },
-    
     -- Plugins
-    { 'nvim-treesitter/nvim-treesitter' }, 
+    { 'nvim-treesitter/nvim-treesitter' },
     {
 	    'glepnir/dashboard-nvim',
 	    event = 'VimEnter',
@@ -37,9 +36,13 @@ require("lazy").setup({
     },
     { 'nvim-lualine/lualine.nvim' },
     { 'VonHeikemen/fine-cmdline.nvim' },
-    { 
-        'rcarriga/nvim-notify', 
+    {
+        'rcarriga/nvim-notify',
         release = "latest"
     },
     { "lewis6991/gitsigns.nvim" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "neovim/nvim-lspconfig" },
+    { "nvim-telescope/telescope-ui-select.nvim" }, 
 })

@@ -35,7 +35,9 @@ Leader is a `SPACE`
 | `<leader>fg` | Find by file content |
 | `<C-p>`      | Find file            |
 | `<leader>fb` | Open buffers         |
-
+| `K`          | Element docs         |
+| `gd`         | Go to definition     | 
+| `<leader>ca` | Code actions         | 
 
 ## Languages spell checking 
 
