@@ -34,11 +34,11 @@ Leader is a `SPACE`
 | `<leader>E`  | Toggle NeoTree       |
 | `<leader>fg` | Find by file content |
 | `<C-p>`      | Find file            |
-| `<leader>fb` | Open buffers         |
-| `K`          | Element docs         |
-| `gd`         | Go to definition     | 
-| `<leader>ca` | Code actions         | 
-
+| `<leader>fb` | Open buffers                |
+| `K`          | Element docs                |
+| `gd`         | Go to definition            | 
+| `<leader>ca` | Code actions                | 
+| `<leader>cd` | Make file directory as root |
 ## Languages spell checking 
 
 todo: complete list

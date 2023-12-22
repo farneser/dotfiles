@@ -1,18 +1,4 @@
--- Basic config
+require("loader")
 
-require("plugins")
-require("config.mappings")
-require("config.colors")
+require("plugins.themes.colors")
 require("config.configs")
-
--- Plugins config
-
-require("plugins.treesitter")
-require("plugins.dashboard")
-require("plugins.neotree")
-require("plugins.telescope")
-require("plugins.lualine")
-require("plugins.finecmdline")
-require("plugins.nvimnotify")
-require("plugins.gitsigns")
-require("plugins.lspconfig")

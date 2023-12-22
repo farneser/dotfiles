@@ -1,12 +1,12 @@
 vim.opt.termguicolors = true
 
 local themes = {
-    "onedark", 
-    "catppuccin", 
+    "onedark",
+    "catppuccin",
     "kanagawa-wave"
 }
 
-function randomElement(list)
+local function randomElement(list)
     math.randomseed(os.time())
 
     local index = math.random(#list)
@@ -14,9 +14,9 @@ function randomElement(list)
     return list[index]
 end
 
-function SetColor(color)
+local function set_theme(color)
     vim.cmd.colorscheme(color)
 end
 
 -- Setup random theme on startup
-SetColor(randomElement(themes))
+set_theme(randomElement(themes))
