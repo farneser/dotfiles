@@ -3,7 +3,24 @@
 script_location="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 config_folder="$script_location/../config"
 target_folder="$HOME/.config"
-config_names=("cava" "hypr" "kitty" "nvim" "rofi" "swappy" "waybar")
+
+config_names=()
+
+# Check if the directory exists
+if [ -d "$config_folder" ]; then
+    # Iterate over folders in the config directory
+    for folder in "$config_folder"/*; do
+        # Check if the item is a directory
+        if [ -d "$folder" ]; then
+            # Extract the folder name and add it to the array
+            folder_name=$(basename "$folder")
+            config_names+=("$folder_name")
+        fi
+    done
+else
+    echo "Error: $config_folder does not exist or is not a directory."
+    exit 1
+fi
 
 for config_name in "${config_names[@]}"; do
   config_path="$config_folder/$config_name"
