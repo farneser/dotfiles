@@ -35,7 +35,7 @@ for config_name in "${config_names[@]}"; do
 
     # Copy contents of config folder to backup folder
     mv "$target_config_path"/* "$backup_folder"
-    echo "Backup created for configuration folder '$target_config_name' in '$backup_folder'"
+    echo "Backup created for configuration folder '$target_config_path' in '$backup_folder'"
 
     # Copy config to $HOME/.config/
     cp -r "$config_path" "$target_folder"
