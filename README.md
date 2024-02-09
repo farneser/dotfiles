@@ -4,7 +4,12 @@
 
 ### Automatic
 
-`undefined`
+Run `install.sh`
+
+```bash 
+chmod +x ./install.sh
+./install.sh
+```
 
 ### Manual (AUR)
 
@@ -12,6 +17,12 @@
 
 ```
 git clone https://github.com/farneser/dotfiles
+```
+
+For semi-automated installing allow scripts
+
+```bash
+chmod +x ./scripts/*.sh
 ```
 
 Install dependencies:
@@ -23,11 +34,11 @@ Install dependencies:
 - swappy - screenshots
 - hyprland - wayland tilemanager
 - cava - audion visualisation
+- wl-clipboard - wayland clipboard utils
 
 or run (yay required)
 
 ```
-chmod +x ./scripts/install-deps-aur.sh
 ./scripts/install-deps-aur.sh
 ```
 
@@ -35,3 +46,20 @@ chmod +x ./scripts/install-deps-aur.sh
 
 move `config` folder content to `~/.config`
 
+```bash
+cp -r ./config/* ~/.config/
+```
+
+or run `./scripts/install-config.sh`
+
+```bash
+./scripts/install-config.sh
+```
+
+##### On laptop
+
+run `./scripts/logind-power-buttons.sh` for suspend on power button instead shutdown and hold for shutdown
+
+```bash
+sudo ./scripts/logind-power-buttons.sh
+```
