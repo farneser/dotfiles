@@ -33,5 +33,5 @@ chmod +x ./scripts/install-deps-aur.sh
 
 #### Setup configuration
 
-move `.config` to `~/`
+move `config` folder content to `~/.config`
 

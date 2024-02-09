@@ -1,7 +1,7 @@
 #!/bin/bash
 
 script_location="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-config_folder="$script_location/../.config"
+config_folder="$script_location/../config"
 config_names=("cava" "hypr" "kitty" "nvim" "rofi" "swappy" "waybar")
 
 for config_name in "${config_names[@]}"; do
