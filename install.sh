@@ -17,11 +17,11 @@ fi
 
 case "$choice" in
   [yY]|[yY][eE][sS])
-    echo "Laptop config skipped"
-    ;;
-  [nN]|[nN][oO])
     echo "Starting installing laptop configurations"
-    ./scripts/logind-power-buttons.sh 
+    sudo ./scripts/logind-power-buttons.sh 
+      ;;
+  [nN]|[nN][oO])
+    echo "Laptop config skipped"
     ;;
   *)
     echo "Invalid input. Please enter Y or n."
