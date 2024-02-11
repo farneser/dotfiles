@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 
+
 # Get keyboard brightness
 get_kbd_backlight() {
 	echo $(brightnessctl -d '*::kbd_backlight' -m | cut -d, -f4)
 }
 
+# Get icons
+get_icon() {
+	current=$(get_kbd_backlight | sed 's/%//')
+	icon=""
+}
 # Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Keyboard Brightness : $current%"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" "Keyboard Brightness : $current%"
 }
 
 # Change brightness

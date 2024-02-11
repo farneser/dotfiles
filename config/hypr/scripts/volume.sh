@@ -8,7 +8,7 @@ get_volume() {
 
 # Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Volume : $(get_volume) %"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Volume : $(get_volume) %"
 }
 
 # Increase Volume
@@ -24,24 +24,24 @@ dec_volume() {
 # Toggle Mute
 toggle_mute() {
 	if [ "$(pamixer --get-mute)" == "false" ]; then
-		pamixer -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Volume Switched OFF"
+		pamixer -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Volume Switched OFF"
 	elif [ "$(pamixer --get-mute)" == "true" ]; then
-		pamixer -u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Volume Switched ON"
+		pamixer -u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Volume Switched ON"
 	fi
 }
 
 # Toggle Mic
 toggle_mic() {
 	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-		pamixer --default-source -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Microphone Switched OFF"
+		pamixer --default-source -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Microphone Switched OFF"
 	elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-		pamixer -u --default-source u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Microphone Switched ON"
+		pamixer -u --default-source u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Microphone Switched ON"
 	fi
 }
 
 # Notify
 notify_mic_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Mic-Level : $(pamixer --default-source --get-volume) %"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "" "Mic-Level : $(pamixer --default-source --get-volume) %"
 }
 
 # Increase MIC Volume
