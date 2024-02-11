@@ -45,3 +45,6 @@ for config_name in "${config_names[@]}"; do
   fi
 done
 
+# Allow scripts 
+chmod +x ${target_folder}/hypr/scripts/*.sh
+
