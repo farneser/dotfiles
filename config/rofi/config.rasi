@@ -1,2 +1,6 @@
 
 @theme "~/.config/rofi/spotlight-dark.rasi"
+
+configuration {
+    terminal: "/usr/bin/kitty";
+}
