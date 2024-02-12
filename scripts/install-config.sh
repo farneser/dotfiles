@@ -1,8 +1,15 @@
 #!/bin/bash
 
+echo "Installin oh-my-zsh"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 script_location="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 config_folder="$script_location/../config"
 target_folder="$HOME/.config"
+home_configs = "$scripts_location/../home"
+
+cp $home_configs/* ~/
 
 config_names=()
 
