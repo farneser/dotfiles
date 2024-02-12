@@ -56,6 +56,7 @@ pacman-contrib
 vim
 yt-dlp
 lazygit
+sddm
 hyprland
 )
 
@@ -81,7 +82,7 @@ cd "$PARENT_DIR" || exit 1
 printf "\n%s - Installing hyprland packages.... \n" "${NOTE}"
 
 for PKG1 in "${hypr_package[@]}" "${hypr_package_2[@]}" "${fonts[@]}" "${Extra[@]}"; do
-  sudo pacman -S "$PKG1" 2>&1 
+  yay -S "$PKG1" --noconfirm 
   if [ $? -ne 0 ]; then
     echo -e "\e[1A\e[K${ERROR} - $PKG1 install had failed, please check the log"
     exit 1
@@ -90,7 +91,7 @@ done
 
 printf "\n%s - Checking if mako or dunst are installed and removing for swaync to work properly \n" "${NOTE}"
 for PKG in "${uninstall[@]}"; do
-  sudo pacman -R "$PKG" 2>&1 
+  yay -R "$PKG" 
   if [ $? -ne 0 ]; then
     echo -e "\e[1A\e[K${ERROR} - $PKG uninstallation had failed, please check the log"
     exit 1
@@ -98,3 +99,5 @@ for PKG in "${uninstall[@]}"; do
 done
 
 clear
+
+sudo systemctl enable sddm
