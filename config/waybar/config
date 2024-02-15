@@ -10,10 +10,10 @@
     "clock"
   ],
   "modules-right": [
-    "custom/updates",
     "network",
     "pulseaudio",
     "hyprland/language",
+    "backlight",
     "battery",
     "custom/power"
   ],
@@ -33,8 +33,14 @@
     },
     "on-click": "pavucontrol",
   },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰃞, "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-",
+  },
   "network": {
-      // "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "{essid} ({signalStrength}%) ",
       "format-ethernet": "{ipaddr}/{cidr} ",
       "tooltip-format": "{ifname} via {gwaddr} ",
@@ -106,13 +112,6 @@
   "custom/power": {
     "format": " ",
     "on-click": "wlogout"
-  },
-  "custom/updates": {
-    "format": "{} Update(s)",
-    "exec": "checkupdates | wc -l",
-    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-    "interval": 15,
-//    "on-click": "gksudo \"kitty yay -Syu\" && notify-send 'The system has been updated' "
   },
   "hyprland/language": {
     "format": "{short}",
