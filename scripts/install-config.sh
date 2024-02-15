@@ -1,15 +1,11 @@
 #!/bin/bash
 
-echo "Installin oh-my-zsh"
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 script_location="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 config_folder="$script_location/../config"
 target_folder="$HOME/.config"
-home_configs = "$scripts_location/../home"
+home_configs="$scripts_location/../home"
 
-cp $home_configs/* ~/
+#cp $home_configs/* ~/
 
 config_names=()
 
@@ -52,6 +48,9 @@ for config_name in "${config_names[@]}"; do
   fi
 done
 
+gsettings set org.cinnamon.desktop.default-applications.terminal exec terminator
+xdg-mime default nemo.desktop inode/directory
+
 # Allow scripts 
-chmod +x ${target_folder}/hypr/scripts/*.sh
+chmod +x ${target_folder}/scripts/*.sh
 

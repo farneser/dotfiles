@@ -1,10 +1,6 @@
 #!/bin/bash
 
-Extra=(
-
-)
-
-hypr_package=( 
+base_packages=( 
 curl 
 grim 
 gvfs 
@@ -38,10 +34,12 @@ wl-clipboard
 wlogout
 xdg-user-dirs
 xdg-utils 
+zsh
 yad
 )
 
-hypr_package_2=(
+hypr_packages=(
+gsettings-desktop-schemas
 brightnessctl 
 btop
 cava
@@ -56,8 +54,12 @@ pacman-contrib
 vim
 yt-dlp
 lazygit
+nemo
+file_roller
 sddm
+blueman
 hyprland
+xdg-desktop-portal-hyprland
 )
 
 fonts=(
@@ -74,30 +76,17 @@ uninstall=(
   mako
 )
 
+source "$(dirname "$(readlink -f "$0")")/globals.sh"
+
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 PARENT_DIR="$SCRIPT_DIR/.."
+
 cd "$PARENT_DIR" || exit 1
 
-printf "\n%s - Installing hyprland packages.... \n" "${NOTE}"
+install_package_pacman "yay"
 
-for PKG1 in "${hypr_package[@]}" "${hypr_package_2[@]}" "${fonts[@]}" "${Extra[@]}"; do
-  yay -S "$PKG1" --noconfirm 
-  if [ $? -ne 0 ]; then
-    echo -e "\e[1A\e[K${ERROR} - $PKG1 install had failed, please check the log"
-    exit 1
-  fi
-done
+install_packages "${base_packages[@]}" "${hypr_packages[@]}" "${fonts[@]}"; do
 
-printf "\n%s - Checking if mako or dunst are installed and removing for swaync to work properly \n" "${NOTE}"
-for PKG in "${uninstall[@]}"; do
-  yay -R "$PKG" 
-  if [ $? -ne 0 ]; then
-    echo -e "\e[1A\e[K${ERROR} - $PKG uninstallation had failed, please check the log"
-    exit 1
-  fi
-done
-
-clear
-
-sudo systemctl enable sddm
+sudo systemctl enable sddm --now
+sudo systemctl enable bluetooth --now
