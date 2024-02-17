@@ -29,4 +29,24 @@ case "$choice" in
 esac
 
 
+read -p "Do you want to install my packages? (y/N): " choice
+
+# If the input is empty, default to "no"
+if [ -z "$choice" ]; then
+  choice="n"
+fi
+
+case "$choice" in
+  [yY]|[yY][eE][sS])
+    echo "Starting installing my packages"
+    sudo ./scripts/install-my-packages.sh 
+      ;;
+  [nN]|[nN][oO])
+    echo "Skipped"
+    ;;
+  *)
+    echo "Invalid input. Please enter Y or n."
+    ;;
+esac
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
