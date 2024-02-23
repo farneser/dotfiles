@@ -29,6 +29,8 @@ swayidle
 swaync 
 swww 
 waybar
+python-pydbus
+python-psutil
 wget
 wl-clipboard
 wlogout

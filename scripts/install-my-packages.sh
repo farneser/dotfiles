@@ -10,6 +10,7 @@ keepassxc
 jetbrains-toolbox
 docker-desktop
 docker-compose
+obsidian
 )
 
 source "$(dirname "$(readlink -f "$0")")/globals.sh"

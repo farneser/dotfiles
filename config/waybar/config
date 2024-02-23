@@ -10,6 +10,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/waybar-media",
     "network",
     "pulseaudio",
     "hyprland/language",
@@ -17,7 +18,15 @@
     "battery",
     "custom/power"
   ],
-  "pulseaudio": {
+  "custom/waybar-media": {
+    "return-type": "json",
+    "exec": "python3 ~/.local/bin/waybar-media.py status",
+    "on-click": "python3 ~/.local/bin/waybar-media.py playpause",
+    "on-scroll-up": "python3 ~/.local/bin/waybar-media.py previous",
+    "on-scroll-down": "python3 ~/.local/bin/waybar-media.py next",
+    "escape": true
+ },
+ "pulseaudio": {
     "tooltip": false,
     "scroll-step": 5,
     "format": "{icon} {volume}%",
@@ -41,11 +50,11 @@
     "on-scroll-down": "brightnessctl set 5%-",
   },
   "network": {
-      "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "{ipaddr}/{cidr} ",
-      "tooltip-format": "{ifname} via {gwaddr} ",
-      "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
+      "format-wifi": "{essid} ({signalStrength}%)  ",
+      "format-ethernet": "{ipaddr}/{cidr}  ",
+      "tooltip-format": "{ifname} via {gwaddr}  ",
+      "format-linked": "{ifname} (No IP)  ",
+      "format-disconnected": "Disconnected ⚠ ",
       "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
   "battery": {
