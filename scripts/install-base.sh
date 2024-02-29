@@ -62,6 +62,11 @@ sddm
 blueman
 hyprland
 xdg-desktop-portal-hyprland
+kalgebra
+gedit
+gtk-engine-murrine
+tokyonight-gtk-theme-git
+sddm-theme-tokyo-night
 )
 
 fonts=(

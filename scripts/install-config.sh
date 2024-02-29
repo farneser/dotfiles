@@ -54,3 +54,20 @@ xdg-mime default nemo.desktop inode/directory
 # Allow scripts 
 chmod +x ${target_folder}/scripts/*.sh
 
+gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Storm-B"
+gsettings set org.gnome.desktop.wm.preferences  theme "Tokyonight-Storm-B"
+
+gsettings set org.gnome.gedit.preferences.editor editor-font 'JetBrainsMonoNL Nerd Font Mono Italic 12'
+gsettings set org.gnome.gedit.preferences.editor scheme 'solarized-dark'
+
+mkdir ~/temp_config_install
+
+git clone https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme ~/temp_config_install/theme
+
+mkdir ~/.icons
+
+cp ~/temp_config_install/theme/themes/Tokyonight-Light ~/.icons/Tokyonight-Light
+
+gsettings set org.gnome.desktop.interface icon-theme 'oomox-Tokyonight-Light'
+
+rm -rf ~/temp_config_install
